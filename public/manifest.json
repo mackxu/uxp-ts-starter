@@ -24,7 +24,7 @@
     {
       "type": "panel",
       "id": "starter",
-      "label": "starter",
+      "label": "uxp starter",
       "minimumSize": {
         "width": 320,
         "height": 850

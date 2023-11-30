@@ -2,12 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
+    <style>
+      body {
+        color: white;
+        padding: 0 16px;
+      }
+
+      li:before {
+          content: '• ';
+          width: 3em;
+      }
+
+      #layers {
+          border: 1px solid #808080;
+          border-radius: 4px;
+          padding: 16px;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="opendoclist"></div>
+    <sp-button id="addLayer">Add Layer</sp-button>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
