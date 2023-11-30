@@ -1,5 +1,5 @@
 import './style.css';
-import { action, app, core, imaging } from 'photoshop';
+import { action, app, core } from 'photoshop';
 
 // We will use this array as our state.
 let open_documents = [];
