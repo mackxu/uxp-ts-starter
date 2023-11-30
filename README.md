@@ -17,8 +17,11 @@ type GetPixelsResult = ImagingModule.GetPixelsResult;
 ```
 
 ## manifest（待完成）
-- 区分环境打包
+- 根据mode分环境打包，修改manifest的id、name
+  - dist/dev
+  - dist/production
 - 自动增加版本号
+  - npm run release
 
 ## 代码质量检查（待完成）
 eslint prettier
