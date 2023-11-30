@@ -1,5 +1,5 @@
 import './style.css';
-import { action, app, core } from 'photoshop';
+import { action, app, core, imaging } from 'photoshop';
 
 // We will use this array as our state.
 let open_documents = [];
@@ -8,7 +8,7 @@ let open_documents = [];
 action.addNotificationListener(["open", "newDocument", "close", "duplicate", "select"], (event, descriptor) => {
     // These events may refer to other elements as well, however, all of them will
     // contain a documentID field indicating the target was a document
-    console.log(descriptor);
+    console.log(event, descriptor);
     
     if (!descriptor.documentID) {
         return;
