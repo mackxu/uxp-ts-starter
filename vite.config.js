@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 import { readFile, writeFile } from 'node:fs/promises';
+import eslint from 'vite-plugin-eslint';
 
 export default ({ mode }) => {
   const outputDir = resolve(`./dist/${mode}`);
@@ -16,7 +17,7 @@ export default ({ mode }) => {
         }
       }
     },
-    plugins: [htmlPlugin(), manifestPlugin(mode, outputDir)],
+    plugins: [eslint(), htmlPlugin(), manifestPlugin(mode, outputDir)],
   });
 };
 

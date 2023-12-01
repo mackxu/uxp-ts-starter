@@ -30,8 +30,26 @@ type GetPixelsResult = ImagingModule.GetPixelsResult;
 - 自动增加版本号
   - 命令npm run release，auto update production/manifest version
 
-## 代码质量检查（待完成）
-eslint prettier
+## 代码质量检查
+eslint prettier 使用Prettier处理代码格式问题，使用linters处理代码质量问题
 
+### Prettier默认配置
+```json
+{
+  printWidth: 80,
+  tabWidth: 2,
+  singleQuote: false,
+  trailingComma: 'none',
+  bracketSpacing: true,
+  semi: true,
+  useTabs: false,
+  // prettier-eslint doesn't currently support
+  // inferring these two (Pull Requests welcome):
+  parser: 'babylon',
+  bracketSameLine: false,
+}
+```
+### Prettier注意事项
+.prettierrc.js is a valid config name in Prettier, but it does not work with the VSCode extension here.
 ## 规范commit格式（待完成）
 simple-git-hooks + commitizen + commitlint
