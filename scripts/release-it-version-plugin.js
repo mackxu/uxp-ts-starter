@@ -2,7 +2,8 @@ import { Plugin } from 'release-it';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-class MyVersionPlugin extends Plugin {
+// upgrade manifest version
+class ManifestVersionPlugin extends Plugin {
   async bump(version) {
     const manifestPath = resolve('dist/production/manifest.json');
     try {
@@ -16,4 +17,4 @@ class MyVersionPlugin extends Plugin {
   }
 }
 
-export default MyVersionPlugin;
+export default ManifestVersionPlugin;

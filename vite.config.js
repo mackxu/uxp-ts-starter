@@ -5,7 +5,7 @@ import eslint from 'vite-plugin-eslint';
 
 export default ({ mode }) => {
   const outputDir = resolve(`./dist/${mode}`);
-  
+
   return defineConfig({
     build: {
       minify: isProd(mode),
@@ -14,8 +14,8 @@ export default ({ mode }) => {
         external: ['uxp', 'photoshop', /photoshop\/[a-z]+/],
         output: {
           format: 'cjs',
-        }
-      }
+        },
+      },
     },
     plugins: [eslint(), htmlPlugin(), manifestPlugin(mode, outputDir)],
   });
@@ -31,6 +31,7 @@ function htmlPlugin() {
   };
 }
 
+// modify manifest name and id
 function manifestPlugin(mode, outputDir) {
   const manifestPath = resolve(outputDir, 'manifest.json');
   return {
@@ -45,12 +46,16 @@ function manifestPlugin(mode, outputDir) {
         const manifest = JSON.parse(manifestJson);
         manifest.name = `${manifest.name} (${mode})`;
         manifest.id = `${manifest.id}.${mode}`;
-        await writeFile(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
+        await writeFile(
+          manifestPath,
+          JSON.stringify(manifest, null, 2),
+          'utf8',
+        );
         console.log(`✓ ${mode} manifest set success`);
       } catch (err) {
         console.error(err);
       }
-    }
+    },
   };
 }
 

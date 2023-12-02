@@ -43,8 +43,6 @@ eslint prettier 使用Prettier处理代码格式问题，使用linters处理代�
   bracketSpacing: true,
   semi: true,
   useTabs: false,
-  // prettier-eslint doesn't currently support
-  // inferring these two (Pull Requests welcome):
   parser: 'babylon',
   bracketSameLine: false,
 }
@@ -52,4 +50,10 @@ eslint prettier 使用Prettier处理代码格式问题，使用linters处理代�
 ### Prettier注意事项
 .prettierrc.js is a valid config name in Prettier, but it does not work with the VSCode extension here.
 ## 规范commit格式（待完成）
-simple-git-hooks + commitizen + commitlint
+simple-git-hooks + commitizen + commitlint.  
+
+commitlint 校验提交信息，commitizen 辅助填写提交信息；   
+在 Git 提交工作流程中，commitlint 作用于 commit-msg 阶段，commitizen作用于 pre-commit
+
+lint-staged 检测git add暂存区的文件，对检测出的文件执行脚本
+simple-git-hooks git钩子库，对git执行的一些命令，通过对应的hooks钩子触发，执行自定义的脚本程序
